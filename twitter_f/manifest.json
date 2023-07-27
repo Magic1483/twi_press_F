@@ -1,0 +1,34 @@
+{
+  "manifest_version":3,
+  "name": "twitter_press_F",
+  "version": "1.0",
+  "description": "Показывает истинное название твиттера",
+  "permissions":[
+    "http://fonts.googleapis.com/*",
+    "https://fonts.googleapis.com/*",
+    "logo.png",
+    "storage",
+    "tabs",
+    "idle"
+  ],
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "css": ["css/sheet.css"],
+      "matches": [
+        "https://twitter.com/*"
+        
+      ]
+    }
+  ],
+  "web_accessible_resources":[{
+    "resources": ["PressStart2P.ttf","logo.png","images/*.jpg"],
+        "matches": ["<all_urls>"],
+       "extension_ids": []
+       
+  }],
+  "action":{
+    "default_icon":"logo.png",
+    "default_popup": "popup.html"
+  }
+}
